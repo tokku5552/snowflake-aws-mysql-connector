@@ -41,7 +41,7 @@ $ npm run build:cdk
 ```bash
 $ cd path/to/snowflake-aws-mysql-connector/cdk/
 $ npm install
-$ npm run cdk -- bootstrap -c target=production
+$ npx cdk bootstrap -c target=production
 ```
 
 You can use `--profile` option if you use profile to switch account or role. (e.g. `npm run cdk -- --profile my-profile ...`)
@@ -49,13 +49,13 @@ You can use `--profile` option if you use profile to switch account or role. (e.
 ### Check what to deploy
 
 ```bash
-$ npm run cdk -- diff -c target=production
+$ npx cdk diff -c target=production
 ```
 
 ### Deploy Lambda function and API Gateway
 
 ```bash
-$ npm run cdk -- deploy -c target=production
+$ npx cdk deploy -c target=production
 [snip]
 Do you wish to deploy these changes (y/n)? y
 ```
@@ -128,13 +128,13 @@ $ npm run build:cdk
 ### Check what to deploy
 
 ```bash
-$ npm run cdk -- diff -c target=production
+$ npx cdk diff -c target=production
 ```
 
 ### Deploy Lambda function and API Gateway
 
 ```bash
-$ npm run cdk -- deploy -c target=production
+$ npx cdk deploy -c target=production
 [snip]
 Do you wish to deploy these changes (y/n)? y
 ```

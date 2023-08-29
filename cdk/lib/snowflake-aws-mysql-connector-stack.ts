@@ -31,7 +31,7 @@ export class SnowflakeAWSMySQLConnectorStack extends cdk.Stack {
     for (const s of props.config.subnets) {
       const subnet = ec2.Subnet.fromSubnetAttributes(
         this,
-        `${props.config.lambdaFunctionName}-subnet`,
+        `${props.config.lambdaFunctionName}-subnet-${s.id}`,
         {
           subnetId: s.id,
           availabilityZone: s.availabilityZone,
@@ -44,7 +44,7 @@ export class SnowflakeAWSMySQLConnectorStack extends cdk.Stack {
     for (const i in props.config.securityGroupIds) {
       const securityGroup = ec2.SecurityGroup.fromSecurityGroupId(
         this,
-        `${props.config.lambdaFunctionName}-security-group`,
+        `${props.config.lambdaFunctionName}-security-group-${i}`,
         props.config.securityGroupIds[i]
       );
       lambdaSecurityGroups.push(securityGroup);
